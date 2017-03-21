@@ -30,10 +30,12 @@ event.params.querystring = {
     "name": "Luke",
     "age": 26
   }],
-  "home": {
-    "phone": "+3333333333",
-    "email": "email@email.com",
-    "twitter": "@username"
+  "contacts": {
+    "home": {
+      "phone": "+3333333333",
+      "email": "email@email.com",
+      "twitter": "@username"
+    }
   }
 }
 ```
