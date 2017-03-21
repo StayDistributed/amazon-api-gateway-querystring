@@ -1,0 +1,25 @@
+{
+  "name": "amazon-api-gateway-querystring",
+  "version": "1.0.0",
+  "description": "Utility for parse nested parameters in query strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StayDistributed/amazon-api-gateway-querystring.git"
+  },
+  "keywords": [
+    "aws",
+    "api gateway",
+    "querystrings",
+    "nested params"
+  ],
+  "author": "Michele Salvini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StayDistributed/amazon-api-gateway-querystring/issues"
+  },
+  "homepage": "https://github.com/StayDistributed/amazon-api-gateway-querystring#readme"
+}
