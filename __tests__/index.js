@@ -2,28 +2,32 @@ var mapQueryString = require('../index');
 
 describe('Query String', () => {
 
-  test('Mapper', () => {
+  test('Readme.md', () => {
 
     var querystring = {
-      'legs[0][departure_airport]': 'MXP',
-      'legs[0][arrival_airport]': 'TIA',
-      'legs[0][outbound_date]': '2017-03-29',
-      'legs[1][departure_airport]': 'oiue',
-      'legs[1][arrival_airport]': 'csdjn',
-      'legs[1][outbound_date]': '2017-03-21',
-      'person[child][name]': 'oiue',
-      'person[child][age]': 'csdjn',
-      'person[parent][name]': '2017-03-21',
-      'adult': 1,
-      'search_type': 'oneway'
+      "person[0][name]": "Mark",
+      "person[0][age]": 32,
+      "person[1][name]": "Luke",
+      "person[1][age]": 26,
+      "contacts[home][phone]": "+3333333333",
+      "contacts[home][email]": "email@email.com",
+      "contacts[home][twitter]": "@username"
     };
 
     var mapped = mapQueryString(querystring);
 
-    expect(mapped.legs[1].departure_airport).toBe('oiue');
-    expect(Object.prototype.toString.call(mapped.legs)).toBe('[object Array]');
-    expect(Object.prototype.toString.call(mapped.legs[0])).toBe('[object Object]');
-    expect(mapped.person.child.name).toBe('oiue');
-    expect(mapped.legs[0].outbound_date).toBe('2017-03-29');
+    expect(Object.prototype.toString.call(querystring)).toBe('[object Object]');
+    expect(Object.prototype.toString.call(querystring.person)).toBe('[object Array]');
+    expect(Object.prototype.toString.call(querystring.person[0])).toBe('[object Object]');
+    expect(Object.prototype.toString.call(querystring.contacts)).toBe('[object Object]');
+    expect(Object.prototype.toString.call(querystring.contacts.home)).toBe('[object Object]');
+    expect(querystring.person[0].name).toBe('Mark');
+    expect(querystring.person[0].age).toBe(32);
+    expect(querystring.person[1].name).toBe('Luke');
+    expect(querystring.person[1].age).toBe(26);
+    expect(querystring.contacts.home.phone).toBe("+3333333333");
+    expect(querystring.contacts.home.email).toBe("email@email.com");
+    expect(querystring.contacts.home.twitter).toBe("@username");
+
   });
 });
