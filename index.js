@@ -37,9 +37,9 @@ function parseParam (json) {
       if (!step[segment]) step[segment] = {};
       step = step[segment];
     });
-
+    
+    delete json[paramName];
   });
-
 
   return recursivelyCheckIfArray(json);
 }

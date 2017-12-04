@@ -6,11 +6,11 @@ To transform plain nested params in object inside querystring:
 
 ```javascript
 var mapQueryString = require('amazon-api-gateway-querystring');
-event.params.querystring = mapQueryString(event.params.querystring);
+event.queryStringParameters = mapQueryString(event.queryStringParameters);
 ```
 
 ```javascript
-event.params.querystring = {
+event.queryStringParameters = {
   "person[0][name]": "Mark",
   "person[0][age]": 32,
   "person[1][name]": "Luke",
@@ -22,7 +22,7 @@ event.params.querystring = {
 
 // become:
 
-event.params.querystring = {
+event.queryStringParameters = {
   "person": [{
     "name": "Mark",
     "age": 32
@@ -39,6 +39,3 @@ event.params.querystring = {
   }
 }
 ```
-
-
-
